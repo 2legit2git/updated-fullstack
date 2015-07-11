@@ -1,0 +1,16 @@
+<div class="form-group">
+                            <label class="col-sm-3 control-label">Condition</label>
+                            <div class="col-sm-5">
+                                <div class="input-group">
+                                    <div class="btn-group">
+                                        <label class="btn btn-default" ng-model="conditionModel" btn-radio="'New'">New</label>
+                                        <label class="btn btn-default" ng-model="conditionModel" btn-radio="'Used'">Used</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-4">
+                                <div class="input-group">
+                                    <p class="form-control-static">Lists a <i>{{conditionModel | lowercase}}</i> item</p>
+                                </div>
+                            </div>
+                        </div>
