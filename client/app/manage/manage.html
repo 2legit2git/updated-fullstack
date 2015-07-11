@@ -1,0 +1,21 @@
+<navbar></navbar>
+
+<div class="container">
+  <a class="btn btn-primary btn-block" ng-click="showGrid = !showGrid">Toggle Grid</a>
+
+ <!--  <a class="btn btn-success" ng-click="getItems()">get items</a> -->
+  </br>
+  <div collapse="showGrid">
+    <strong>Filter:  </strong>
+    <div class="input-group">
+      
+      <input class="col-sm-10" type="text" ng-model="filterOptions.filterText" />
+      
+    </div>
+    </br>
+    <div class="gridStyle" ng-grid="gridOptions">
+    </div>
+
+  </div>
+  <div ui-view="" autoscroll="true"></div>
+</div>

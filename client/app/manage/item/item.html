@@ -1,0 +1,56 @@
+<div class="row">
+  <div class="col-md-12">
+    <div class="well well-sm">
+      <div class="row">
+        <div class="col-xs-2 col-md-2 text-center">
+          <img ng-src="{{item.galleryURL}}" width="100%" height="100%" class="img-rounded img-responsive" />
+        </div>
+        <div class="col-xs-10 col-md-10 section-box">
+          <h4>
+                            {{item.title}} <a href="{{item.viewItemURL}}" alt="view listing" target="_blank"><span class="glyphicon glyphicon-new-window">
+                            </span></a>
+                        </h4>
+          <p>
+            <a ui-sref="manage.item.edit({id: item.itemID})" class="btn btn-default" title="edit"><b>Edit Listing</b>
+                <span class="glyphicon glyphicon-pencil"></a>
+            <a ui-sref="manage.item.stats({id: item.itemID})" class="btn btn-info" title="view stats"><b>View Statistics</b>
+                <span class="glyphicon glyphicon-stats"></a>
+            <a ui-sref="manage.item.quantity({id: item.itemID})" class="btn btn-primary" title="modify inventory"><b>Modify Quantities</b>
+                <span class="glyphicon glyphicon-th"></a>
+            <a ui-sref="manage.item.price({id: item.itemID})" class="btn btn-success" title="modify price"><b>Manage Pricing</b>
+                <span class="glyphicon glyphicon-usd"></a>
+            <a ui-sref="manage.item.pics({id: item.itemID})" class="btn btn-warning" title="modify pictures"><b>Manage Pictures</b>
+                <span class="glyphicon glyphicon-picture"></a>
+            <a ui-sref="manage.item.end({id: item.itemID})" class="btn btn-danger" title="delete/end"><b>End Listing</b>
+                <span class="glyphicon glyphicon-remove"></span></a>
+
+          </p>
+          <hr />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<form ng-hide="true" novalidate class="simple-form">
+  Name:
+  <input type="text" ng-model="user.name" />
+  <br /> E-mail:
+  <input type="email" ng-model="user.email" />
+  <br /> Gender:
+  <input type="radio" ng-model="user.gender" value="male" />male
+  <input type="radio" ng-model="user.gender" value="female" />female
+  <br />
+  <input type="button" ng-click="reset()" value="Reset" />
+  <input type="submit" ng-click="update(user)" value="Save" />
+  <pre>form = {{user | json}}</pre>
+  <pre>master = {{master | json}}</pre>
+</form>
+
+
+<div class="testing" ng-hide="true">
+  <a ui-sref="manage.item.price">click for manage-price</a>
+  <a ui-sref="manage.item.quantity">click for manage-quantity</a>
+</div>
+
+<div ui-view autoscroll="true"></div>
